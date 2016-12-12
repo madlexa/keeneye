@@ -1,0 +1,69 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Spring Boot Thymeleaf Hello World Example</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <link rel="stylesheet" th:href="@{/css/main.css}"
+          href="../static/css/main.css"/>
+
+    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css}"
+          rel="stylesheet" media="screen"/>
+
+    <script src="http://cdn.jsdelivr.net/webjars/react/15.3.2/react.min.js"
+            th:src="@{/webjars/react/15.3.2/react.min.js}"></script>
+
+    <script src="http://cdn.jsdelivr.net/webjars/react/15.3.2/react-dom.min.js"
+            th:src="@{/webjars/react/15.3.2/react-dom.min.js}"></script>
+
+    <script src="http://cdn.jsdelivr.net/webjars/babel/5.8.29-1/browser.min.js"
+            th:src="@{/webjars/babel/5.8.29-1/browser.min.js}"></script>
+
+    <script src="http://cdn.jsdelivr.net/webjars/jquery/2.2.0/jquery.min.js"
+            th:src="@{/webjars/jquery/2.2.0/jquery.min.js}"></script>
+
+    <script src="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js"
+            th:src="@{/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js}"></script>
+
+    <script type="text/babel" th:src="@{/js/scenarios.jsx}"
+            src="../static/js/scenarios.jsx">
+
+    </script>
+
+</head>
+<body>
+
+<div class="well">
+    <div class="row">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <span>scenarios</span>
+                <a class="btn btn-success btn-sm pull-right" href="#modal" data-toggle="modal"
+                   style="margin-top: -5px;" id="scenario-add"><span
+                        class="glyphicon glyphicon-plus"></span></a>
+            </div>
+            <div class="panel-body" id="scenarios">
+                <table class="table" th:remove="all">
+                    <tr>
+                        <th>#</th>
+                        <th>name</th>
+                        <th>exec date</th>
+                        <th>result</th>
+                        <th>action</th>
+                    </tr>
+                    <tr class="row-active">
+                        <td>0</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+one.trifle.keeneye.model.particle.ExecScenario:
+    get: |-
+        SELECT
+    delete: |-
+        DELETE FROM execScenarios WHERE id = $id
+one.trifle.keeneye.model.dictionary.Scenario:
+    get: |-
+        SELECT s.ID, s.name
+        FROM scenarios s
+        WHERE 1 = 1
+        ${id != null ? "AND s.id = $id" : ""}
+        ${name != null ? "AND s.name = ${name.escape()}" : ""}
+    update: |-
+        UPDATE scenarios
+        SET name = ${name.escape()}
+        WHERE id = $id
+

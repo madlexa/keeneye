@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+	http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>one.trifle</groupId>
+    <artifactId>keeneye</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>keeneye</name>
+    <description>Application for integreation test scenarios</description>
+    <url>https://github.com/madlexa/keeneye</url>
+
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>https://www.apache.org/licenses/LICENSE-2.0</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.4.2.RELEASE</version>
+    </parent>
+
+    <properties>
+        <!--SYSTEM-->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.package>one.trifle.keeneye</project.package>
+        <project.package.path>one/trifle/keeneye</project.package.path>
+
+        <!--LOGIC-->
+        <groovy.version>2.4.7</groovy.version>
+
+        <!--LOGGER-->
+        <logger.version>1.7.21</logger.version>
+
+        <!--DATABASE-->
+        <sqlite.version>3.15.1</sqlite.version>
+        <tomcat-jdbc.version>9.0.0.M13</tomcat-jdbc.version>
+        <lurry.version>0.0.1-SNAPSHOT</lurry.version>
+
+        <!--UI-->
+        <ui.bootstrap.version>3.3.7-1</ui.bootstrap.version>
+        <ui.jquery.version>2.2.0</ui.jquery.version>
+        <ui.react.version>15.3.2</ui.react.version>
+        <ui.babel.version>5.8.29-1</ui.babel.version>
+
+        <!--TEST-->
+        <junit.version>4.12</junit.version>
+        <mockito.version>2.0.2-beta</mockito.version>
+        <spock.version>1.1-groovy-2.4-rc-3</spock.version>
+    </properties>
+
+    <dependencies>
+        <!--LOGIC-->
+        <dependency>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy-all</artifactId>
+            <version>${groovy.version}</version>
+        </dependency>
+
+        <!--LOGGER-->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${logger.version}</version>
+        </dependency>
+
+        <!--SPRING-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+
+        <!-- hot swapping, disable cache for template, enable live reload -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <!--DATABASE-->
+        <dependency>
+            <groupId>org.xerial</groupId>
+            <artifactId>sqlite-jdbc</artifactId>
+            <version>${sqlite.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-jdbc</artifactId>
+            <version>${tomcat-jdbc.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>one.trifle</groupId>
+            <artifactId>lurry</artifactId>
+            <version>${lurry.version}</version>
+        </dependency>
+
+        <!--UI-->
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>bootstrap</artifactId>
+            <version>${ui.bootstrap.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>jquery</artifactId>
+            <version>${ui.jquery.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>react</artifactId>
+            <version>${ui.react.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>babel</artifactId>
+            <version>${ui.babel.version}</version>
+        </dependency>
+
+        <!--TEST-->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+            <version>${mockito.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.spockframework</groupId>
+            <artifactId>spock-core</artifactId>
+            <version>${spock.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+    <developers>
+        <developer>
+            <id>owner</id>
+            <name>Aleksey Dobrynin</name>
+            <email>dobrynin.nsk@gmail.com</email>
+            <timezone>UTC+7</timezone>
+        </developer>
+    </developers>
+
+    <build>
+        <plugins>
+            <!-- Package as an executable jar/war -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <compilerId>groovy-eclipse-compiler</compilerId>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.codehaus.groovy</groupId>
+                        <artifactId>groovy-eclipse-compiler</artifactId>
+                        <version>2.7.0-01</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+
+            <plugin>
+                <groupId>org.pitest</groupId>
+                <artifactId>pitest-maven</artifactId>
+                <version>1.1.11</version>
+                <configuration>
+                    <targetClasses>
+                        <param>one.trifle.keeneye*</param>
+                    </targetClasses>
+                    <targetTests>
+                        <param>one.trifle.keeneye*</param>
+                    </targetTests>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.7.7.201606060606</version>
+                <executions>
+                    <execution>
+                        <id>prepare-agent</id>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.eluder.coveralls</groupId>
+                <artifactId>coveralls-maven-plugin</artifactId>
+                <version>4.0.0</version>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.10.4</version>
+                <executions>
+                    <execution>
+                        <id>verify-javadocs</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>javadoc</goal>
+                        </goals>
+                        <configuration>
+                            <quiet>true</quiet>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                        <configuration>
+                            <sourcepath>${project.build.sourceDirectory};${project.build.directory}/jdk</sourcepath>
+                            <additionalparam>-Xdoclint:none</additionalparam>
+                            <noqualifier>all</noqualifier>
+                            <quiet>true</quiet>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.0.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+        </plugins>
+    </build>
+
+    <scm>
+        <connection>scm:git:https://github.com/madlexa/keeneye.git</connection>
+        <developerConnection>scm:git:https://github.com/madlexa/keeneye.git</developerConnection>
+        <url>https://github.com/madlexa/keeneye.git</url>
+    </scm>
+
+    <!--<repositories>-->
+    <!--<repository>-->
+    <!--<id>maven central</id>-->
+    <!--<name>maven central</name>-->
+    <!--<url>https://repo.maven.apache.org/maven2</url>-->
+    <!--</repository>-->
+    <!--<repository>-->
+    <!--<id>jfrog oss snapshot</id>-->
+    <!--<name>jfrog oss snapshot repo</name>-->
+    <!--<url>https://oss.jfrog.org/oss-snapshot-local/</url>-->
+    <!--</repository>-->
+    <!--</repositories>-->
+
+</project>
