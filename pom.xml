@@ -272,17 +272,4 @@
         <url>https://github.com/madlexa/keeneye.git</url>
     </scm>
 
-    <!--<repositories>-->
-    <!--<repository>-->
-    <!--<id>maven central</id>-->
-    <!--<name>maven central</name>-->
-    <!--<url>https://repo.maven.apache.org/maven2</url>-->
-    <!--</repository>-->
-    <!--<repository>-->
-    <!--<id>jfrog oss snapshot</id>-->
-    <!--<name>jfrog oss snapshot repo</name>-->
-    <!--<url>https://oss.jfrog.org/oss-snapshot-local/</url>-->
-    <!--</repository>-->
-    <!--</repositories>-->
-
 </project>
