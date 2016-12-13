@@ -15,14 +15,10 @@
  */
 package one.trifle.keeneye.model.dictionary
 
-import groovy.transform.CompileStatic
-
 /**
  * @author Aleksey Dobrynin
  */
-@CompileStatic
-class Scenario {
+class Project {
     Long id
     String name
-    String type
 }

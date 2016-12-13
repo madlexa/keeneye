@@ -13,16 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package one.trifle.keeneye.model.dictionary
+package one.trifle.keeneye.model.particle
 
 import groovy.transform.CompileStatic
 
-/**
- * @author Aleksey Dobrynin
- */
 @CompileStatic
-class Scenario {
+class ExecScenarioRequest {
     Long id
     String name
-    String type
+    String request
+    String response
+    String error
+    Date createDate
+    Long time
 }

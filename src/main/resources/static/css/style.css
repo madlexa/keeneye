@@ -1,0 +1,55 @@
+.keeeneye-table-btn {
+    font-size: 10pt !important;
+    padding: 7px 7px !important;
+}
+
+.row-active {
+}
+
+.row-none-active {
+    opacity: 0.4;
+}
+
+.row-active .hide-active {
+    display: none;
+}
+
+.row-none-active .hide-inactive {
+    display: none;
+}
+
+.modal-large {
+    width: 90%;
+}
+
+.sortable tr {
+    cursor: move;
+}
+
+.xml-format > div {
+    word-wrap: break-word;
+    border: 1px solid #3c3c3c;
+}
+
+textarea {
+    font-family: monospace;
+}
+
+.xml-format i {
+    color: #0600FF
+}
+
+.row-success {
+    font-size: 16pt;
+    color: #3c763d;
+}
+
+.row-fail {
+    font-size: 16pt;
+    color: #a94442;
+}
+
+.row-wait {
+    font-size: 16pt;
+    color: #666;
+}

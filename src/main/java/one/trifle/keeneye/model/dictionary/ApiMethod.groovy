@@ -21,8 +21,8 @@ import groovy.transform.CompileStatic
  * @author Aleksey Dobrynin
  */
 @CompileStatic
-class Scenario {
+class ApiMethod {
     Long id
     String name
-    String type
+    String transportType
 }

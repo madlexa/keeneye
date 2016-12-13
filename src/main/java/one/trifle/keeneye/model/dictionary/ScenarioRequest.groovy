@@ -21,8 +21,14 @@ import groovy.transform.CompileStatic
  * @author Aleksey Dobrynin
  */
 @CompileStatic
-class Scenario {
+class ScenarioRequest {
     Long id
+    ApiMethod method
     String name
-    String type
+    String request
+    String asserts
+    Date createDate
+    Boolean active
+    Integer order
+
 }

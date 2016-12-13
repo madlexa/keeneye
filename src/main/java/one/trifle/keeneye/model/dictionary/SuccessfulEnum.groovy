@@ -21,8 +21,6 @@ import groovy.transform.CompileStatic
  * @author Aleksey Dobrynin
  */
 @CompileStatic
-class Scenario {
-    Long id
-    String name
-    String type
+enum SuccessfulEnum {
+    FAIL, WAIT, SUCCESS
 }
