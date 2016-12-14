@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-let Glyphicon = React.createClass({
+let Result = React.createClass({
     render: function () {
         let data = [];
         if (this.props.successful) {
@@ -44,7 +44,7 @@ let Scenario = React.createClass({
                 <td>{this.props.id}</td>
                 <td>{this.props.name}</td>
                 <td></td>
-                <td><Glyphicon successful={this.props.successful}/></td>
+                <td><Result successful={this.props.successful}/></td>
                 <td><Action successful={this.props.successful}/></td>
             </tr>
         );
