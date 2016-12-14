@@ -17,17 +17,11 @@ package one.trifle.keeneye.model.dictionary
 
 import groovy.transform.CompileStatic
 
-import java.time.LocalDateTime
-
 /**
  * @author Aleksey Dobrynin
  */
 @CompileStatic
-class Scenario {
+class HashTags {
     Long id
     String name
-    String type
-    LocalDateTime creatioDate = LocalDateTime.now()
-    Boolean active = Boolean.TRUE
-    List<ScenarioRequest> requests = []
 }

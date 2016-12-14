@@ -16,6 +16,7 @@
 package one.trifle.keeneye.model.dictionary
 
 import groovy.transform.CompileStatic
+import one.trifle.keeneye.transport.Transport
 
 /**
  * @author Aleksey Dobrynin
@@ -23,6 +24,7 @@ import groovy.transform.CompileStatic
 @CompileStatic
 class ApiMethod {
     Long id
-    String name
-    String transportType
+    String code
+    Class<? extends Transport> transport
+    List<ApiParam> params = []
 }

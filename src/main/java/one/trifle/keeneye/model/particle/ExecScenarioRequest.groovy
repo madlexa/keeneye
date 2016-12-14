@@ -16,14 +16,22 @@
 package one.trifle.keeneye.model.particle
 
 import groovy.transform.CompileStatic
+import one.trifle.keeneye.model.dictionary.SuccessfulEnum
 
+import java.time.LocalDateTime
+
+/**
+ * @author Aleksey Dobrynin
+ */
 @CompileStatic
 class ExecScenarioRequest {
     Long id
     String name
+    Integer order = 0
     String request
     String response
+    SuccessfulEnum status
     String error
-    Date createDate
+    LocalDateTime createDate = LocalDateTime.now()
     Long time
 }

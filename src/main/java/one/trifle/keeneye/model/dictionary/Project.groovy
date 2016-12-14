@@ -15,10 +15,18 @@
  */
 package one.trifle.keeneye.model.dictionary
 
+import groovy.transform.CompileStatic
+
+import java.time.LocalDateTime
+
 /**
  * @author Aleksey Dobrynin
  */
+@CompileStatic
 class Project {
     Long id
     String name
+    LocalDateTime creatioDate = LocalDateTime.now()
+    Boolean active = Boolean.TRUE
+    List<Scenario> scenarios = []
 }

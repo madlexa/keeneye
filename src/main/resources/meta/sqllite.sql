@@ -120,8 +120,8 @@ CREATE INDEX idx_executed_request_id
 -------------------
 
 CREATE TABLE hash_tags (
-  id      INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-  hashTag VARCHAR(255)                      NOT NULL
+  id   INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+  name VARCHAR(255)                      NOT NULL
 );
 CREATE UNIQUE INDEX idx_hash_tags
   ON hash_tags (hashTag);

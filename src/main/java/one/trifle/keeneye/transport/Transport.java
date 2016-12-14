@@ -13,21 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package one.trifle.keeneye.model.dictionary
-
-import groovy.transform.CompileStatic
-
-import java.time.LocalDateTime
+package one.trifle.keeneye.transport;
 
 /**
  * @author Aleksey Dobrynin
  */
-@CompileStatic
-class Scenario {
-    Long id
-    String name
-    String type
-    LocalDateTime creatioDate = LocalDateTime.now()
-    Boolean active = Boolean.TRUE
-    List<ScenarioRequest> requests = []
+public interface Transport {
+    Response handle(Request request);
 }

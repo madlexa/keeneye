@@ -16,7 +16,6 @@
 package one.trifle.keeneye.model.particle
 
 import groovy.transform.CompileStatic
-import one.trifle.keeneye.model.dictionary.Scenario
 import one.trifle.keeneye.model.dictionary.SuccessfulEnum
 
 import java.time.LocalDateTime
@@ -27,8 +26,9 @@ import java.time.LocalDateTime
 @CompileStatic
 class ExecScenario {
     Long id
-    Scenario scenario
-    LocalDateTime date
-    SuccessfulEnum successful
-    Long time
+    LocalDateTime date = LocalDateTime.now()
+    SuccessfulEnum status
+    String result
+    Long time = 0
+    List<ExecScenarioRequest> requests
 }

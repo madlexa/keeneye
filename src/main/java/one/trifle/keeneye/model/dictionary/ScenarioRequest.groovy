@@ -17,6 +17,8 @@ package one.trifle.keeneye.model.dictionary
 
 import groovy.transform.CompileStatic
 
+import java.time.LocalDateTime
+
 /**
  * @author Aleksey Dobrynin
  */
@@ -27,8 +29,8 @@ class ScenarioRequest {
     String name
     String request
     String asserts
-    Date createDate
-    Boolean active
-    Integer order
-
+    LocalDateTime creatioDate = LocalDateTime.now()
+    Boolean active = Boolean.TRUE
+    Integer order = 0
+    List<RequestParam> params = []
 }
