@@ -15,7 +15,6 @@
  */
 package one.trifle.keeneye.logic
 
-import one.trifle.keeneye.model.business.Request
 import spock.lang.Specification
 import spock.lang.Unroll
 
@@ -62,11 +61,11 @@ class AssertTest extends Specification {
 
         where:
         id | code1                               | code2                               | params            || result
-        1  | "assert test == 1"                  | "assert test == 2"                  | [test: 1]         || true
-        2  | "assert test == 2"                  | "assert test == 1"                  | [test: 1]         || false
-        3  | "assert test == 1\nassert b == 'b'" | "assert test == 1\nassert b == 'c'" | [test: 1, b: "b"] || true
-        4  | "assert test == 1\nassert b == 'c'" | "assert test == 1\nassert b == 'b'" | [test: 1, b: "b"] || false
-        5  | "assert test == 1"                  | "assert b == 'b'"                   | [b: "b"]          || false
-        7  | "assert test == 1"                  | "assert 1 == 1"                     | null              || false
+        -1 | "assert test == 1"                  | "assert test == 2"                  | [test: 1]         || true
+        -2 | "assert test == 2"                  | "assert test == 1"                  | [test: 1]         || false
+        -3 | "assert test == 1\nassert b == 'b'" | "assert test == 1\nassert b == 'c'" | [test: 1, b: "b"] || true
+        -4 | "assert test == 1\nassert b == 'c'" | "assert test == 1\nassert b == 'b'" | [test: 1, b: "b"] || false
+        -5 | "assert test == 1"                  | "assert b == 'b'"                   | [b: "b"]          || false
+        -7 | "assert test == 1"                  | "assert 1 == 1"                     | null              || false
     }
 }

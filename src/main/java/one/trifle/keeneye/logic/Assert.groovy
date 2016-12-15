@@ -1,7 +1,6 @@
 package one.trifle.keeneye.logic
 
 import groovy.transform.CompileStatic
-import one.trifle.keeneye.model.business.Request
 
 import java.util.concurrent.ConcurrentHashMap
 
@@ -66,7 +65,6 @@ class Assert {
      * @return Fail.line == -1 if no problem OR fail with exception message and line error
      */
     Fail fail() {
-
         return exception != null ? new Fail(
                 message: exception.getMessage(),
                 line: exception.getStackTrace().find {

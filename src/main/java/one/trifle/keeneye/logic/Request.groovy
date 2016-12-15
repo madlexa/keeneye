@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package one.trifle.keeneye.model.business
+package one.trifle.keeneye.logic
 
 import groovy.transform.CompileStatic
 
@@ -30,6 +30,10 @@ class Request {
      * check groovy code
      */
     String code
+    /**
+     * request template
+     */
+    String template
     /**
      * result params
      */
