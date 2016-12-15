@@ -124,7 +124,7 @@ CREATE TABLE hash_tags (
   name VARCHAR(255)                      NOT NULL
 );
 CREATE UNIQUE INDEX idx_hash_tags
-  ON hash_tags (hashTag);
+  ON hash_tags (name);
 
 -------------------
 -- link between scenarios and hash tags
