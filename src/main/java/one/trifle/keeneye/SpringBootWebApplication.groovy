@@ -54,6 +54,7 @@ class SpringBootWebApplication extends SpringBootServletInitializer {
 
     @Bean
     GQueryTemplate lurry(DataSource dataSource) {
+        // TODO resource by sql driver
         ClassPathResource classPathResource = new ClassPathResource("meta/sqllite.yaml")
         new GQueryTemplate(dataSource, new FileReader(classPathResource.getFile()), new YamlParser())
     }
