@@ -32,7 +32,7 @@ let Action = React.createClass({
     render: function () {
         let data = [];
         return (
-            <a className="action" href="#">{this.props.successful == "WAIT" ? "Stop" : "Run"}</a>
+            <a className="action" href="#">{this.props.successful === "WAIT" ? "Stop" : "Run"}</a>
         );
     }
 });

@@ -1,0 +1,13 @@
+{
+  "name": "keeneye",
+  "version": "0.0.1-SHAPSHOT",
+  "url": "https://github.com/madlexa/keeneye",
+  "email": "dobrynin.nsk@gmail.com",
+  "autor": "Aleksey Dobrynin",
+  "dependencies": {
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1",
+    "react-redux": "^5.0.1",
+    "redux": "^3.6.0"
+  }
+}
